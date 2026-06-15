@@ -1,0 +1,184 @@
+/* Google Fonts Luxury Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0D0D0D;
+    color: #F5F5F7;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    color: #F5F5F7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Bespoke Selection Styles */
+  ::selection {
+    background-color: rgba(212, 175, 55, 0.25);
+    color: #D4AF37;
+  }
+
+  /* Thin Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D0D0D;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer components {
+  /* Ultra-Premium Glassmorphism Nav */
+  .glass-header {
+    background: rgba(13, 13, 13, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Luxury Card Base */
+  .luxury-card {
+    background: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luxury-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.03);
+    transform: translateY(-4px);
+  }
+
+  /* Custom Clip-Path reveals */
+  .clip-reveal-left {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .clip-reveal-left.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* Gold Liquid Button Hook */
+  .btn-gold {
+    position: relative;
+    overflow: hidden;
+    background: #D4AF37;
+    color: #0D0D0D;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid #D4AF37;
+  }
+
+  .btn-gold:hover {
+    background: transparent;
+    color: #D4AF37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  }
+
+  /* Gold Outline Button Hook */
+  .btn-gold-outline {
+    background: transparent;
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-gold-outline:hover {
+    border-color: #D4AF37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+  }
+}
+
+/* Custom inertial inertia scrolls, snap properties, and micro transitions */
+.transition-smooth {
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.3);
+  color: transparent;
+}
+
+.text-stroke-gold:hover {
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.8);
+}
+
+/* Water wave animations for luxury watercourt diagnostic cards */
+@keyframes wave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wave-slow {
+  animation: wave 12s linear infinite;
+}
+
+.animate-wave-fast {
+  animation: wave 8s linear infinite;
+}
+
+/* Subtle luxury grid pattern for background texture */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+}
+
+/* Grain/noise overlay */
+.bg-grain-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+}
+
+/* Slowly drifting ambient glowing circles keyframes */
+@keyframes drift-slow {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes drift-mid {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.05); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-glow-slow {
+  animation: drift-slow 25s ease-in-out infinite;
+}
+
+.animate-glow-mid {
+  animation: drift-mid 18s ease-in-out infinite;
+}
+
